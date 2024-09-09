@@ -1,0 +1,52 @@
+.arrow-animation {
+  display: inline-block;
+  animation: slide 1.6s infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    transform: translateX(20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+}
+
+@keyframes gradient-glow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25); /* Grows the text */
+  }
+}
+
+.glow-text {
+  display: inline-block;
+  font-size: 1em; /* Adjust font size as needed */
+}
+
+.glow-text span {
+  display: inline-block;
+  background: linear-gradient(270deg, rgb(0, 0, 0), #000000, #00f);
+  background-size: 80% 80%;
+  background-clip: text; /* Standard property for compatibility */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-glow 3s ease infinite;
+  margin: 0 0.11em; /* Add margin to create space between characters */
+}
+
+.glow-text span:nth-child(1) { animation-delay: 0s; }
+.glow-text span:nth-child(2) { animation-delay: 0.2s; }
+.glow-text span:nth-child(3) { animation-delay: 0.4s; }
+/* Add more nth-child rules as needed */
