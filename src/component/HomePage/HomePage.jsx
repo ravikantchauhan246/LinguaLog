@@ -1,21 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./HomePage.css";
 
 const HomePage = ({ setFile, setAudioStream }) => {
   const text = "Your Voice, Transcribed and Translated Effortlessly";
-
-  useEffect(() => {
-    const styleSheet = document.styleSheets[0];
-    text.split("").forEach((_, index) => {
-      const delay = index * 0.1 + "s";
-      styleSheet.insertRule(
-        `.glow-text span:nth-child(${
-          index + 1
-        }) { animation-delay: ${delay}; }`,
-        styleSheet.cssRules.length
-      );
-    });
-  }, [text]);
 
   return (
     <main className="flex-1 p-4 flex gap-3 sm:gap-3 md:gap-5 flex-col justify-center text-center">
