@@ -1,6 +1,6 @@
 import React from "react";
 
-const FileDisplay = ({ handleAudioReset, file, audioStream }) => {
+const FileDisplay = ({ handleAudioReset, file, audioStream,handleFormSubmission }) => {
   return (
     <main className="flex-1 p-4 flex gap-3 sm:gap-3 md:gap-5 flex-col justify-center text-center sm:w-96 w-72 max-w-full mx-auto">
       <h1 className="font-semibold text-5xl sm:text-6xl md:text-7xl">
@@ -16,7 +16,7 @@ const FileDisplay = ({ handleAudioReset, file, audioStream }) => {
         </button>
         <button className="specialBtn px-3 py-2 rounded-lg text-blue-400 flex items-center gap-2">
         
-          <p>Transcribe</p>
+          <p onClick={handleFormSubmission}>Transcribe</p>
           <i className="fa-solid fa-pen"></i>
         </button>
       </div>
